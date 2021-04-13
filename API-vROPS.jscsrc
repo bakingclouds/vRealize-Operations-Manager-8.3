@@ -1,0 +1,972 @@
+
+Swagger UI
+Related Files
+Select a definition
+VMware vRealize Operations Manager API
+
+ 8.3.0 
+
+Officially supported API(s) are listed below.
+The Old Documentation can be found here. It will be deprecated soon.
+
+Actions
+
+/api/actions, /api/actiondefinitions - APIs for performing action and action definition based operations
+GET
+​/api​/actiondefinitions
+Look up all Action Definitions in the system
+POST
+​/api​/actions​/{id}
+Perform an Action on one or more resources
+POST
+​/api​/actions​/{id}​/query
+Populate the information needed to run an action
+GET
+​/api​/actions​/{taskId}​/status
+Get action status by the given task Id
+Adapter Kinds
+
+/api/adapterkinds - APIs for managing adapter kinds and associated metadata
+GET
+​/api​/adapterkinds
+Get Adapter Types
+GET
+​/api​/adapterkinds​/{adapterKindKey}​/resourcekinds​/{resourceKindKey}
+Get a specific Resource Kind supported by a specific Adapter Kind
+GET
+​/api​/adapterkinds​/{adapterKindKey}​/resourcekinds​/{resourceKindKey}​/properties
+Get the meta-data for properties for a specific Resource Kind supported by a specific Adapter Kind
+GET
+​/api​/adapterkinds​/{adapterKindKey}​/resourcekinds​/{resourceKindKey}​/resources
+Query for Resources within a particular Adapter Kind and Resource Kind
+GET
+​/api​/adapterkinds​/{adapterKindKey}​/resourcekinds​/{resourceKindKey}​/statkeys
+Get the meta-data for attributes (excluding properties) for a specific Resource Kind supported by a specific Adapter Kind
+GET
+​/api​/adapterkinds​/{adapterKindKey}​/resources
+Query for Resources of a particular Adapter Kind
+GET
+​/api​/adapterkinds​/{id}
+Get an Adapter Kind using the specified identifier
+GET
+​/api​/adapterkinds​/{key}​/resourcekinds
+Get all the Resource Kinds supported by a specific Adapter Kind
+Adapters
+
+/api/adapters - APIs for performing operations related to adapter management
+GET
+​/api​/adapters
+Get all the adapter instance resources in the system
+POST
+​/api​/adapters
+Create an Adapter Instance
+PUT
+​/api​/adapters
+Update an Adapter Instance
+PATCH
+​/api​/adapters
+Patch an Adapter Instance
+GET
+​/api​/adapters​/{adapterId}
+Look up a single adapter instance using an identifier
+DELETE
+​/api​/adapters​/{adapterId}
+Delete an Adapter Instance
+PUT
+​/api​/adapters​/{adapterId}​/maintained
+Mark the adapter instance as being <b>MAINTAINED</b> for the given duration
+DELETE
+​/api​/adapters​/{adapterId}​/maintained
+Mark the adapter instance as being <b>STARTED</b>
+PUT
+​/api​/adapters​/{adapterId}​/monitoringstate​/start
+Start the adapter instance from monitoring its resources
+PUT
+​/api​/adapters​/{adapterId}​/monitoringstate​/stop
+Stop the adapter instance from monitoring its resources
+GET
+​/api​/adapters​/{adapterId}​/resources
+Enumerate all resources managed by an adapter instance
+POST
+​/api​/adapters​/testConnection
+Test Adapter Instance connection
+PATCH
+​/api​/adapters​/testConnection
+Patch an Adapter Instance Connection
+Alert Plugins
+
+/api/alertplugins - APIs for performing operations on alert plugins and alert plugin types
+GET
+​/api​/alertplugins
+Get Notification Plugins, optionally filtered for a specific type
+POST
+​/api​/alertplugins
+Create a new Notification Plugin Instance
+PUT
+​/api​/alertplugins
+Update an existing Notification Plugin Instance
+PATCH
+​/api​/alertplugins
+Patch a new Notification Plugin Instance
+GET
+​/api​/alertplugins​/{pluginId}
+Get Notification Plugin specified by plugin id
+DELETE
+​/api​/alertplugins​/{pluginId}
+Delete an existing Notification Plugin Instance
+PUT
+​/api​/alertplugins​/{pluginId}​/enable​/{enabled}
+Start an existing Notification Plugin Instance
+GET
+​/api​/alertplugins​/{pluginId}​/rules
+Retrieve all the notification rules of the plugin instance
+GET
+​/api​/alertplugins​/types
+Get the Notification Plugin Types available
+GET
+​/api​/alertplugins​/types​/{pluginTypeId}
+Get the Notification Plugin Type Metadata
+Alerts
+
+/api/alerts, /api/alertdefinitions - APIs for performing alert and Alert definition based operations
+GET
+​/api​/alertdefinitions
+Get collection of Alert Definitions matching the search criteria specified
+POST
+​/api​/alertdefinitions
+Create an Alert Definition
+PUT
+​/api​/alertdefinitions
+Update an existing Alert Definition
+GET
+​/api​/alertdefinitions​/{id}
+Get the Alert Definition using the identifier specified
+PUT
+​/api​/alertdefinitions​/{id}
+Enable alert definition in policy
+DELETE
+​/api​/alertdefinitions​/{id}
+Delete an Alert Definition
+GET
+​/api​/alerts
+Look up Alerts by their identifiers or using the identifiers of the Resources they are associated with
+POST
+​/api​/alerts
+Perform operations on one or more Alerts
+GET
+​/api​/alerts​/{id}
+Look up an Alert by its identifier
+GET
+​/api​/alerts​/{id}​/notes
+Get all the Alert Notes associated with an Alert
+POST
+​/api​/alerts​/{id}​/notes
+Add a Note to an Alert
+GET
+​/api​/alerts​/{id}​/notes​/{noteId}
+Get the requested Alert Note associated with an Alert
+DELETE
+​/api​/alerts​/{id}​/notes​/{noteId}
+Delete a specific Alert Note for a specific Alert
+DELETE
+​/api​/alerts​/bulk
+Delete canceled alerts using one or more criteria specified in the Query Spec
+GET
+​/api​/alerts​/contributingsymptoms
+Get the list of triggered symptoms for the requested alerts
+POST
+​/api​/alerts​/group​/{groupingCondition}​/query
+Query for Alert groups using one or more criteria specified in the Query Spec
+POST
+​/api​/alerts​/notes​/query
+Query for Alert Notes based on specified criteria
+POST
+​/api​/alerts​/query
+Query for Alerts using one or more criteria specified in the Query Spec
+GET
+​/api​/alerts​/types
+Get all the Alert Types and Subtypes defined in the system.
+Applications
+
+/api/applications - APIs for application monitoring specific operations
+GET
+​/api​/applications
+Get all the created application monitoring configurations
+POST
+​/api​/applications
+Configure application monitoring
+PATCH
+​/api​/applications
+Accept the untrusted certificates of the application monitoring and configure it
+POST
+​/api​/applications​/agents
+Install agent on resource
+DELETE
+​/api​/applications​/agents
+Uninstall agent on resource
+GET
+​/api​/applications​/agents​/{id}​/services
+Get applications service configurations on the resource
+POST
+​/api​/applications​/agents​/{id}​/services
+Save application service configuration on the resource
+PUT
+​/api​/applications​/agents​/{id}​/services
+Update application service configuration on the resource
+DELETE
+​/api​/applications​/agents​/{id}​/services
+Remove application service configuration on the resource
+GET
+​/api​/applications​/agents​/{id}​/services​/{name}
+Get application service configuration by service name on the resource
+GET
+​/api​/applications​/agents​/{taskId}​/status
+Get bootstrap action status by the given taskId
+GET
+​/api​/applications​/agents​/services​/{taskId}​/status
+Get application configuration status by the given taskId
+PUT
+​/api​/applications​/agents​/start
+Start agent on resource
+PUT
+​/api​/applications​/agents​/stop
+Stop agent on resource
+PUT
+​/api​/applications​/agents​/upgrade
+Upgrade agent on resource
+POST
+​/api​/applications​/clientCertificate​/{collectorId}
+Query to sign the Arc Client certificate
+GET
+​/api​/applications​/resources
+Get all available resources for application monitoring
+GET
+​/api​/applications​/services​/{name}
+Get template of application configuration
+PUT
+​/api​/applications​/subscribe
+Subscribe to Application Monitoring by downloading bootstrap bundle containing all required scripts for bootstraping ARC Agent from Endpoints
+PUT
+​/api​/applications​/unsubscribe
+UnSubscribe to Application Monitoring by downloading bootstrap bundle containing all required scripts for Unbootstraping ARC Agent from Endpoints.
+PUT
+​/api​/applications​/vcenter​/add
+Add a vCenter to be monitored by the specified application monitoring configuration
+PUT
+​/api​/applications​/vcenter​/remove
+Remove a vCenter from Application Monitoring Configuration
+Audit
+
+/api/audit - APIs for Audit specific operations
+GET
+​/api​/audit​/system
+Get system audit report
+Auth
+
+/api/auth - APIs for performing authentication specific operations
+GET
+​/api​/auth​/currentuser
+Look up for an initiator of this API method
+GET
+​/api​/auth​/currentuser​/permissions
+Get assigned role permissions for an initiator of this API method
+GET
+​/api​/auth​/currentuser​/roles​/{roleName}​/privileges
+Get privileges of a role for an initiator of this API method
+GET
+​/api​/auth​/privilegegroups
+Get the available privilege groups
+GET
+​/api​/auth​/privileges
+Get the available privileges
+GET
+​/api​/auth​/roles
+Find list of application roles using the role names
+POST
+​/api​/auth​/roles
+Create a user role
+PUT
+​/api​/auth​/roles
+Update a user role
+GET
+​/api​/auth​/roles​/{roleName}
+Look up a role with the given name
+DELETE
+​/api​/auth​/roles​/{roleName}
+Delete a role with the given roleName.
+GET
+​/api​/auth​/roles​/{roleName}​/privileges
+Get the privileges for a user role
+POST
+​/api​/auth​/roles​/{roleName}​/privileges
+Add the privileges to a user role
+PUT
+​/api​/auth​/roles​/{roleName}​/privileges
+Set the privileges for a user role
+DELETE
+​/api​/auth​/roles​/{roleName}​/privileges
+Remove specified privileges from the user role
+GET
+​/api​/auth​/sources
+Get all the available authentication sources in the system
+POST
+​/api​/auth​/sources
+Add a new authentication source in the system
+PUT
+​/api​/auth​/sources
+Update an authentication source in the system
+PATCH
+​/api​/auth​/sources
+Patch an already added authentication source with the certificate data
+POST
+​/api​/auth​/sources​/{id}​/usergroups​/search
+Search user-groups for an auth source
+PUT
+​/api​/auth​/sources​/{id}​/usergroups​/synchronize
+Synchronize user groups
+POST
+​/api​/auth​/sources​/{id}​/users
+Import users from the auth source
+POST
+​/api​/auth​/sources​/{id}​/users​/search
+Search users for an auth source
+GET
+​/api​/auth​/sources​/{sourceId}
+Retrieve detailed information about a particular authentication source
+DELETE
+​/api​/auth​/sources​/{sourceId}
+Delete an authentication source
+POST
+​/api​/auth​/sources​/test
+Test a new or an existing authentication source in the system
+PATCH
+​/api​/auth​/sources​/test
+Patch an already tested authentication source with the certificate data
+GET
+​/api​/auth​/sourcetypes
+Get all the available authentication source types.
+GET
+​/api​/auth​/sourcetypes​/{sourceId}
+Retrieve information about a particular authentication source type.
+POST
+​/api​/auth​/token​/acquire
+Acquire a token to perform REST API calls
+POST
+​/api​/auth​/token​/release
+Terminate the current sessionId
+GET
+​/api​/auth​/traversalspecs
+Get/Query the list of all traversal specification templates in the system
+GET
+​/api​/auth​/usergroups
+Retrieve a list of local user groups using identifiers or/and names
+POST
+​/api​/auth​/usergroups
+Create a new local user group or import SSO/LDAP user groups
+PUT
+​/api​/auth​/usergroups
+Modify a local user group
+DELETE
+​/api​/auth​/usergroups
+Delete a list of user groups using their identifiers
+GET
+​/api​/auth​/usergroups​/{groupId}​/permissions
+Get assigned role permissions for the user group
+PUT
+​/api​/auth​/usergroups​/{groupId}​/permissions
+Assign a role permission to a particular user group
+DELETE
+​/api​/auth​/usergroups​/{groupId}​/permissions​/{roleName}
+Unassign role permission from a user group
+PUT
+​/api​/auth​/usergroups​/{groupId}​/traversalspecs
+(Deprecated) Assign a traversal specification to a particular user
+GET
+​/api​/auth​/usergroups​/{id}
+Look up a local user group using its identifier
+DELETE
+​/api​/auth​/usergroups​/{id}
+Delete a local user group
+GET
+​/api​/auth​/users
+Look up a list of users using the user identifiers or their role names
+POST
+​/api​/auth​/users
+Create a new user
+PUT
+​/api​/auth​/users
+Modify the details of a particular user
+DELETE
+​/api​/auth​/users
+Delete a collection of users with the given identifiers
+GET
+​/api​/auth​/users​/{id}
+Look up a particular user using its identifier
+DELETE
+​/api​/auth​/users​/{id}
+Delete a user
+GET
+​/api​/auth​/users​/{userId}​/permissions
+Get assigned role permissions for a user
+PUT
+​/api​/auth​/users​/{userId}​/permissions
+Assign a role permission to a particular user
+DELETE
+​/api​/auth​/users​/{userId}​/permissions​/{roleName}
+Unassign role permission from a user
+PUT
+​/api​/auth​/users​/{userId}​/traversalspecs
+(Deprecated) Assign a traversal specification to a particular user.
+PUT
+​/api​/auth​/users​/passwordchange
+Change the password of the active user
+Certificate
+
+/api/certificate - APIs for performing certificate related operations
+GET
+​/api​/certificate
+Get all certificates
+DELETE
+​/api​/certificate
+Delete a certificate
+Collector Groups
+
+/api/collectorgroups - APIs for managing Collector Groups
+GET
+​/api​/collectorgroups
+Enumerate all the Collector Groups defined in the system
+POST
+​/api​/collectorgroups
+Create a new Collector Group in the system
+PUT
+​/api​/collectorgroups
+Update a Collector Group in the system
+GET
+​/api​/collectorgroups​/{id}
+Get details of a particular Collector Group in the system
+DELETE
+​/api​/collectorgroups​/{id}
+Delete a Collector Group from the system using its identifier
+PUT
+​/api​/collectorgroups​/{id}​/collector​/{collectorId}
+Add a Collector to Collector Group
+DELETE
+​/api​/collectorgroups​/{id}​/collector​/{collectorId}
+Remove a Collector from a Collector Group
+Collectors
+
+/api/collectors - APIs for managing collectors and associated metadata
+GET
+​/api​/collectors
+Get all the Collectors registered with the vRealize Operations Manager system
+GET
+​/api​/collectors​/{id}​/adapters
+Get all the Collectors registered with the vRealize Operations Manager system
+Content Management
+
+/api/content - APIs for managing content in the system
+POST
+​/api​/content​/backup
+Backup content for current user
+GET
+​/api​/content​/backup​/result
+Download backup for current user
+GET
+​/api​/content​/progress
+Get content progress
+POST
+​/api​/content​/restore
+Restore content for current user from uploaded file
+GET
+​/api​/content​/restore​/result
+Get restore data report for current user
+Cost Configuration
+
+/api/costconfig - APIs for managing cost configuration
+GET
+​/api​/costconfig​/currency
+Get details of currently selected currency such as display name, code, etc.
+POST
+​/api​/costconfig​/currency
+Set currency
+Credentials
+
+/api/credentials, /api/credentialkinds - Controllers for credential instances and credential kinds
+GET
+​/api​/credentialkinds
+Get all Credential Kinds defined in the system
+GET
+​/api​/credentials
+Get all Credential Instances in the system
+POST
+​/api​/credentials
+Create a new Credential Instance
+PUT
+​/api​/credentials
+Update an existing Credential Instance
+PATCH
+​/api​/credentials
+Partial update an existing Credential Instance
+GET
+​/api​/credentials​/{id}
+Get a Credential Instance
+DELETE
+​/api​/credentials​/{id}
+Delete a Credential Instance
+GET
+​/api​/credentials​/{id}​/adapters
+Get all Adapter Instances using the Credential Instance
+GET
+​/api​/credentials​/{id}​/resources
+Get the Objects using the Credential Instance
+Deployment
+
+/api/deployment - APIs for performing deployment based operations
+PUT
+​/api​/deployment​/cluster​/dt
+Manages a specific run of Dynamic Threshold (DT) Computation in a vRealize Operations Manager Cluster
+GET
+​/api​/deployment​/config​/globalsettings
+Get all global setting values
+GET
+​/api​/deployment​/config​/globalsettings​/{key}
+Get global setting value for the requested key
+PUT
+​/api​/deployment​/config​/globalsettings​/{key}​/{value}
+Update global setting value for specified key
+GET
+​/api​/deployment​/config​/globalsettings​/metadata
+Get global settings metadata
+GET
+​/api​/deployment​/config​/properties​/{namespace}
+Get the set of key/value pairs for the given namespace
+POST
+​/api​/deployment​/config​/properties​/{namespace}
+Override the default values for a namespace/key with the given values
+GET
+​/api​/deployment​/config​/properties​/{namespace}​/{key}
+Get the set of values for the given key in the given namespace
+DELETE
+​/api​/deployment​/config​/properties​/{namespace}​/{key}
+Delete an overridden key's value from the given namespace
+POST
+​/api​/deployment​/config​/properties​/{namespace}​/{key}​/{value}
+Override the default values for a namespace/key with the given values
+GET
+​/api​/deployment​/licenses
+Get all the License Details associated with the vRealize Operations Manager instance
+POST
+​/api​/deployment​/licenses
+Add one or more License keys to the vRealize Operations Manager instance
+DELETE
+​/api​/deployment​/licenses​/{id}
+Delete a specific License associated with the vRealize Operations Manager instance
+GET
+​/api​/deployment​/node​/services​/{name}​/info
+Get information about a specific Service that is part of the vRealize Operations Manager stack
+GET
+​/api​/deployment​/node​/services​/info
+Get the health of all Services
+GET
+​/api​/deployment​/node​/status
+Get the status of the node
+Events
+
+/api/events - APIs for performing event based operations
+POST
+​/api​/events
+Push a single Event into the system
+POST
+​/api​/events​/adapterkinds​/{adapterKind}
+Push a single Event into the system with associating an adapter kind as the event source
+POST
+​/api​/events​/bulk
+Push one or more Events into the system
+POST
+​/api​/events​/bulk​/adapterkinds​/{adapterKind}
+Push one or more Events into the system with associating an adapter kind as the event source
+Maintenance Schedules
+
+/api/maintenanceschedules - APIs for CRUD operations on Maintenance Schedules
+GET
+​/api​/maintenanceschedules
+Query for all maintenance schedules based on schedule id, schedule name and resource id
+POST
+​/api​/maintenanceschedules
+Create a maintenance schedule
+PUT
+​/api​/maintenanceschedules
+Update an existing maintenance schedule
+DELETE
+​/api​/maintenanceschedules
+Delete maintenance schedules with the given identifiers.
+Notifications
+
+/api/notifications - APIs for managing notification rules, notification plugin instances and emails
+GET
+​/api​/notifications​/email​/templates
+Query for Email templates based on names and identifiers
+POST
+​/api​/notifications​/email​/templates
+Create a new E-Mail template in the system
+PUT
+​/api​/notifications​/email​/templates
+Update an E-Mail template in the system
+GET
+​/api​/notifications​/email​/templates​/{id}
+Look up an E-Mail template by its identifier
+DELETE
+​/api​/notifications​/email​/templates​/{id}
+Delete an E-Mail template from the system
+GET
+​/api​/notifications​/email​/templates​/{id}​/conditions
+Get all Email Template Conditions for a particular Email Template
+POST
+​/api​/notifications​/email​/templates​/{id}​/conditions
+Set the E-Mail template condition on an E-Mail template
+DELETE
+​/api​/notifications​/email​/templates​/{id}​/conditions
+Clear all conditions associated with the E-Mail template
+GET
+​/api​/notifications​/rules
+Get all the Notification Rules defined in the system
+POST
+​/api​/notifications​/rules
+Create a new Notification Rule for a Notification Plugin Instance
+PUT
+​/api​/notifications​/rules
+Update a specific Notification Rule for a Notification Plugin Instance
+GET
+​/api​/notifications​/rules​/{id}
+Get the Notification Rule for the specified identifier
+DELETE
+​/api​/notifications​/rules​/{id}
+Delete a specific existing Notification Rule associated with a Notification Plugin Instance
+Product Licensing
+
+/api/product/licensing - APIs for product licensing specific operations
+GET
+​/api​/product​/licensing​/edition
+Get edition of product licensing
+Recommendations
+
+/api/recommendations - APIs for managing recommendations
+GET
+​/api​/recommendations
+Get recommendations
+POST
+​/api​/recommendations
+Create a recommendation
+PUT
+​/api​/recommendations
+Update an existing recommendation
+GET
+​/api​/recommendations​/{id}
+Get the recommendation specified by the given identifier
+DELETE
+​/api​/recommendations​/{id}
+Delete a recommendation
+Reports
+
+/api/reports, /api/reportdefinitions - APIs for managing reports, report definitions and report schedules in the system
+GET
+​/api​/reportdefinitions
+Get the Report Definitions based on the query specification specified
+GET
+​/api​/reportdefinitions​/{id}
+Get a Report Definition
+GET
+​/api​/reportdefinitions​/{id}​/schedules
+Get all the Report Schedules associated with a Report Definition
+POST
+​/api​/reportdefinitions​/{id}​/schedules
+Create a Report Schedule to generate a Report for the specified Report Definition and Resource(s)
+PUT
+​/api​/reportdefinitions​/{id}​/schedules
+Update Report Schedule associated with the specific Report Definition and for the specified Schedule identifier
+GET
+​/api​/reportdefinitions​/{id}​/schedules​/{scheduleId}
+Get a specific Report Schedule for the specified Report Definition and Schedule identifier
+DELETE
+​/api​/reportdefinitions​/{id}​/schedules​/{scheduleId}
+Delete Report Schedule associated with the specific Report Definition and for the specified Schedule identifier
+GET
+​/api​/reports
+Get the Reports based on the Report Query Spec provided
+POST
+​/api​/reports
+Generate (create) a Report using the specified Report Definition and for the specified Resource
+GET
+​/api​/reports​/{id}
+Get the detail of a Report given its identifier
+DELETE
+​/api​/reports​/{id}
+Delete a report by its identifier
+GET
+​/api​/reports​/{id}​/download
+Download the Report given its identifier
+Resource
+
+/api/resources/{id} APIs for performing operations on single resource
+GET
+​/api​/resources​/{id}
+Get the Resource for the specified identifier
+DELETE
+​/api​/resources​/{id}
+Delete a Resource with the given identifier
+PUT
+​/api​/resources​/{id}​/geolocation
+Update the geographical location of the Resource
+PUT
+​/api​/resources​/{id}​/maintained
+Put the specific Resource in Maintenance
+DELETE
+​/api​/resources​/{id}​/maintained
+Bring the Resource out of Maintenance manually
+PUT
+​/api​/resources​/{id}​/monitoringstate​/start
+Inform one or more or all Adapters to start monitoring this Resource
+PUT
+​/api​/resources​/{id}​/monitoringstate​/stop
+Inform one or more or all Adapters to stop monitoring this Resource
+GET
+​/api​/resources​/{id}​/properties
+Get all the properties for the specified Resource
+POST
+​/api​/resources​/{id}​/properties
+Add Properties to a Resource
+POST
+​/api​/resources​/{id}​/properties​/adapterkinds​/{adapterKind}
+Add Properties to a Resource along with associating an adapter instance of the specified adapter kind as the source of data
+GET
+​/api​/resources​/{id}​/relationships
+Get ALL the related resources of a particular Relationship Type for a Resource
+GET
+​/api​/resources​/{id}​/relationships​/{relationshipType}
+Get the related resources of a particular Relationship Type for a Resource
+POST
+​/api​/resources​/{id}​/relationships​/{relationshipType}
+Add relationships of given type to the resource with specified resourceId
+PUT
+​/api​/resources​/{id}​/relationships​/{relationshipType}
+Set (Replace) Resource as RelationshipType of a specific Resource
+DELETE
+​/api​/resources​/{id}​/relationships​/{relationshipType}​/{relatedId}
+Delete (remove) a Resource as RelationshipType of a specific Resource
+GET
+​/api​/resources​/{id}​/statkeys
+Get all the stat keys for the specified Resource
+GET
+​/api​/resources​/{id}​/stats
+Look up stats of a group of objects with the resource ids
+POST
+​/api​/resources​/{id}​/stats
+Add Stats to a Resource
+POST
+​/api​/resources​/{id}​/stats​/adapterkinds​/{adapterKind}
+Add Stats to a Resource along with associating an adapter instance of the specified adapter kind as the source of data
+GET
+​/api​/resources​/{id}​/stats​/dt
+Get Stats and Dynamic Threshold values for one or more StatKeys and for a Collection of Resources
+GET
+​/api​/resources​/{id}​/stats​/latest
+Get the latest stat for a given Resource and given a set of attributes
+POST
+​/api​/resources​/{id}​/stats​/query
+Look up stats of a group of objects with the resource ids
+GET
+​/api​/resources​/{id}​/stats​/topn
+Get the TopN stats for a given Resource and given a set of attributes
+Resources
+
+/api/resources APIs for performing operations on numerous of resources
+GET
+​/api​/resources
+Get a listing of resources based on the query spec specified
+PUT
+​/api​/resources
+Update a Resource in the system
+POST
+​/api​/resources​/adapterkinds​/{adapterKindKey}
+Create a new Resource in the system associated with the specified adapter kind
+POST
+​/api​/resources​/adapters​/{adapterInstanceId}
+Create a new Resource in the system associated with an existing adapter instance
+DELETE
+​/api​/resources​/bulk
+Delete multiple Resources
+POST
+​/api​/resources​/bulk​/relationships
+Get resources that satisfy filtering criteria and are related to specified list of resources with the given relationship type
+GET
+​/api​/resources​/groups
+Get all custom groups
+POST
+​/api​/resources​/groups
+Create a new custom group definition
+PUT
+​/api​/resources​/groups
+Modify an existing custom group definition
+GET
+​/api​/resources​/groups​/{groupId}
+Get custom group
+DELETE
+​/api​/resources​/groups​/{groupId}
+Delete a custom group
+GET
+​/api​/resources​/groups​/{groupId}​/members
+Get members of the group
+GET
+​/api​/resources​/groups​/types
+Get group types
+POST
+​/api​/resources​/groups​/types
+Add a new group type
+DELETE
+​/api​/resources​/groups​/types​/{name}
+Delete the group type
+PUT
+​/api​/resources​/maintained
+Put all the specified Resource in Maintenance
+DELETE
+​/api​/resources​/maintained
+Bring the specified set of Resources out of Maintenance manually
+PUT
+​/api​/resources​/monitoringstate​/start
+Inform one or more or all Adapters to start monitoring a Collection of Resources
+PUT
+​/api​/resources​/monitoringstate​/stop
+Inform one or more or all Adapters to stop monitoring a Collection of Resources
+GET
+​/api​/resources​/profiles
+Get all custom profiles
+POST
+​/api​/resources​/profiles
+Create a new custom profile definition
+PUT
+​/api​/resources​/profiles
+Modify an existing custom profile definition
+GET
+​/api​/resources​/profiles​/{profileId}
+Get custom profile
+DELETE
+​/api​/resources​/profiles​/{profileId}
+Delete a custom profile
+GET
+​/api​/resources​/properties
+Get all the Properties and their current (latest) values for the specified Resources
+POST
+​/api​/resources​/properties​/latest​/query
+Get current (latest) values of requested properties for the specified resources
+POST
+​/api​/resources​/query
+Gets a listing of resources based on the query spec specified
+GET
+​/api​/resources​/statkeys
+Get all the available Stat Keys and their details for the specified set of Resources
+GET
+​/api​/resources​/stats
+Get stats for one or more Resources using the specific query spec
+POST
+​/api​/resources​/stats
+Add Stats to a Collection of Resources
+POST
+​/api​/resources​/stats​/adapterkinds​/{adapterKind}
+Adds Stats to a Collection of Resources along with associating an adapter instance of the specified adapter kind as the source of data
+POST
+​/api​/resources​/stats​/dt​/query
+Get Stats and Dynamic Threshold values for one or more StatKeys and for a Collection of Resources
+GET
+​/api​/resources​/stats​/latest
+Get Latest stats of one or more Resources using the query spec that is specified
+POST
+​/api​/resources​/stats​/latest​/query
+Get the last "maxSamples" stats values for specified one or more Resources
+POST
+​/api​/resources​/stats​/query
+Get stats for one or more Resources using the specific query spec
+GET
+​/api​/resources​/stats​/topn
+Get the Top-N stats data for one or more Resources and a set of StatKeys
+Solutions
+
+/api/solutions - APIs for performing operations on solutions and their adapter kinds
+GET
+​/api​/solutions
+Get all solutions installed in the product
+GET
+​/api​/solutions​/{solutionId}
+Get solution data for the specified id
+GET
+​/api​/solutions​/{solutionId}​/adapterkinds
+Get Adapter Kind details for the specified solution id
+GET
+​/api​/solutions​/{solutionId}​/licenses
+Get all the licenses that are currently available for a solution
+POST
+​/api​/solutions​/{solutionId}​/licenses
+Add a license key to the solution
+DELETE
+​/api​/solutions​/{solutionId}​/licenses​/{licenseId}
+Delete the Id of the license for the specified solution id from the system
+Super Metrics
+
+/api/supermetrics - APIs for managing super metrics
+GET
+​/api​/supermetrics
+Get a collection of SuperMetrics based on search parameters
+POST
+​/api​/supermetrics
+Create a SuperMetric with the given name, formula and description
+PUT
+​/api​/supermetrics
+Update a SuperMetric with the given name, formula and description
+GET
+​/api​/supermetrics​/{id}
+Get a SuperMetric with the given id
+DELETE
+​/api​/supermetrics​/{id}
+Delete a SuperMetric
+Symptoms
+
+/api/symptoms, /api/symptomdefinitions - APIs for performing symptom definitions and symptoms based operations
+GET
+​/api​/symptomdefinitions
+Get Symptom Definitions
+POST
+​/api​/symptomdefinitions
+Create the Symptom Definition
+PUT
+​/api​/symptomdefinitions
+Update an existing Symptom Definition
+GET
+​/api​/symptomdefinitions​/{id}
+Get Symptom Definition specified by id
+DELETE
+​/api​/symptomdefinitions​/{id}
+Delete a Symptom Definition
+GET
+​/api​/symptoms
+Look up all Symptoms in the system
+POST
+​/api​/symptoms​/query
+Look up a set of Symptoms using a query object
+Tasks
+
+/api/tasks - APIs for managing tasks in the system
+GET
+​/api​/tasks
+Look up a list of task objects' statuses
+GET
+​/api​/tasks​/{id}
+Look up a task status with the given identifier
+Versions Info
+
+/api/versions - APIs for managing versioning information
+GET
+​/api​/versions
+Get all supported versions by the service
+GET
+​/api​/versions​/current
+Get the current version of the service
+Models
